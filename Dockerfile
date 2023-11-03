@@ -1,9 +1,10 @@
 FROM python:3.8-slim
 
+RUN sed -i "s@http://deb.debian.org@https://mirrors.aliyun.com@g" /etc/apt/sources.list.d/debian.sources
 RUN printf 'deb https://mirrors.aliyun.com/debian/ bullseye main contrib non-free\ndeb-src https://mirrors.aliyun.com/debian/ bullseye main contrib non-free\ndeb https://mirrors.aliyun.com/debian/ bullseye-updates main contrib non-free\ndeb-src https://mirrors.aliyun.com/debian/ bullseye-updates main contrib non-free\ndeb https://mirrors.aliyun.com/debian/ bullseye-backports main contrib non-free\ndeb-src https://mirrors.aliyun.com/debian/ bullseye-backports main contrib non-free\ndeb https://mirrors.aliyun.com/debian-security/ bullseye-security main contrib non-free\ndeb-src https://mirrors.aliyun.com/debian-security/ bullseye-security main contrib non-free' > /etc/apt/sources.list
 RUN apt update && \
     apt install --no-install-recommends -y git curl && \
-    apt install proxychains4 && \
+    apt install -y proxychains4 && \
     rm -rf /var/lib/apt/lists/*
     
 COPY . .
