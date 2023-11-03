@@ -15,4 +15,4 @@ RUN pip3 install poetry pyOpenSSL dsinternals -i https://mirrors.aliyun.com/pypi
     poetry source add --priority=default mirrors https://mirrors.aliyun.com/pypi/simple/ && \
     poetry install
 
-ENTRYPOINT [ "proxychains4 -f /tmp/p.conf itwasalladream" ]
+ENTRYPOINT [ "/usr/bin/proxychains4", "-f", "/tmp/p.conf", "itwasalladream" ]
