@@ -6,8 +6,9 @@ RUN apt-get update && \
 
 COPY . .
 
-RUN pip3 install poetry pyOpenSSL dsinternals && \
+RUN pip3 install poetry pyOpenSSL dsinternals -i https://mirrors.aliyun.com/pypi/simple/ && \
     poetry config virtualenvs.create false && \
+    poetry source add --priority=default mirrors https://mirrors.aliyun.com/pypi/simple/ && \
     poetry install
 
 ENTRYPOINT [ "itwasalladream" ]
