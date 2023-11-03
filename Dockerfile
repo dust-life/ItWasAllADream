@@ -1,8 +1,10 @@
 FROM python:3.8-slim
 
-RUN apt-get update && \
-    apt-get install --no-install-recommends -y git curl && \
-    apt-get install proxychains4 && \
+COPY /etc/apt/sources.list /etc/apt/sources.list
+
+RUN apt update && \
+    apt install --no-install-recommends -y git curl && \
+    apt install proxychains4 && \
     rm -rf /var/lib/apt/lists/*
 
 COPY . .
