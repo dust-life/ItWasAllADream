@@ -401,13 +401,14 @@ files = [
 
 [[package]]
 name = "impacket"
-version = "0.10.1.dev1+20230118.142.d0c05de1"
+version = "0.11.0"
 description = "Network protocols Constructors and Dissectors"
 category = "main"
 optional = false
 python-versions = "*"
-files = []
-develop = false
+files = [
+    {file = "impacket-0.11.0.tar.gz", hash = "sha256:ee4039b4d2aede8f5f64478bc59faac86036796be24dea8dc18f009fb0905e4a"},
+]
 
 [package.dependencies]
 charset_normalizer = "*"
@@ -420,12 +421,6 @@ pyasn1 = ">=0.2.3"
 pycryptodomex = "*"
 pyOpenSSL = ">=21.0.0"
 six = "*"
-
-[package.source]
-type = "git"
-url = "https://github.com/fortra/impacket.git"
-reference = "HEAD"
-resolved_reference = "d0c05de1365548bf2a25431bbd7b004c091e4167"
 
 [[package]]
 name = "importlib-metadata"
