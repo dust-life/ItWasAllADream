@@ -16,4 +16,4 @@ RUN pip3 install poetry pyOpenSSL dsinternals -i https://mirrors.aliyun.com/pypi
     poetry install
 
 #ENTRYPOINT [ "itwasalladream" ]
-ENTRYPOINT [ "/usr/bin/proxychains4", "-f", "/tmp/p.conf", "itwasalladream" ]
+ENTRYPOINT [ "/usr/bin/proxychains4", "-q", "-f", "/tmp/p.conf", "itwasalladream" ]
